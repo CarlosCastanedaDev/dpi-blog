@@ -7,7 +7,7 @@ backend:
 media_folder: 'public/images/uploads' # Folder where user uploaded files should go
 public_folder: '/images/uploads'
 
-pages: # A list of collections the CMS should be able to edit
+collections: # A list of collections the CMS should be able to edit
   - name: 'post' # Used in routes, ie.: /admin/collections/:slug/edit
     label: 'Post' # Used in the UI, ie.: "New Post"
     folder: 'src/pages/posts' # The path to the folder where the documents are stored
@@ -17,7 +17,7 @@ pages: # A list of collections the CMS should be able to edit
           label: 'Layout',
           name: 'layout',
           widget: 'hidden',
-          default: '../../layouts/MarkdownPostLayout.astro',
+          default: '/layouts/MarkdownPostLayout.astro',
         }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'text' }
