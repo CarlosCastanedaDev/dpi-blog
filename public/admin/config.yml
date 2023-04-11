@@ -17,7 +17,7 @@ collections: # A list of collections the CMS should be able to edit
           label: 'Layout',
           name: 'layout',
           widget: 'hidden',
-          default: '/layouts/MarkdownPostLayout.astro',
+          default: '../../layouts/MarkdownPostLayout.astro',
         }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'text' }
