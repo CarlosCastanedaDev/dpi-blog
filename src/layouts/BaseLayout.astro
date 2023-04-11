@@ -1,9 +1,9 @@
 ---
-import '../styles/global.css'
+import '../styles/global.css';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 
-const {pageTitle} = Astro.props
+const { pageTitle } = Astro.props;
 ---
 
 <html lang='en'>
@@ -12,15 +12,31 @@ const {pageTitle} = Astro.props
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
+    <script src='https://identity.netlify.com/v1/netlify-identity-widget.js'
+    ></script>
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Header/>
+    <Header />
     <h1>{pageTitle}</h1>
     <slot />
-    <Footer/>
+    <Footer />
     <script>
-      import '../scripts/menu'
+      import '../scripts/menu';
+    </script>
+    <script lang='ts'>
+      import { onMount } from 'svelte';
+      onMount(() => {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on('init', (user) => {
+            if (!user) {
+              window.netlifyIdentity.on('login', () => {
+                document.location.href = '/admin/';
+              });
+            }
+          });
+        }
+      });
     </script>
   </body>
 </html>
