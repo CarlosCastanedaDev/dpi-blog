@@ -1,12 +1,14 @@
 ---
 import Social from './Social.astro';
+import ThemeIcon from './ThemeIcon.astro';
 ---
 
 <style>
   footer {
     display: flex;
+    justify-content: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 </style>
 
@@ -14,4 +16,5 @@ import Social from './Social.astro';
   <Social platform='Twitter' username='NeminDev' />
   <Social platform='Github' username='CarlosCastanedaDev' />
   <Social platform='LinkedIn' username='/in/CarlosCastanedaDev' />
+  <ThemeIcon />
 </footer>
